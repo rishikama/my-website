@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>About Nutriguide</title>
+
+    <style>
+        /* Full page green gradient background */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #a8e063, #56ab2f);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            animation: bgFade 6s ease-in-out infinite alternate;
+        }
+
+        /* Background subtle animation */
+        @keyframes bgFade {
+            0% { filter: brightness(1); }
+            100% { filter: brightness(1.1); }
+        }
+
+        /* Main container card */
+        .container {
+            width: 70%;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px;
+            color: white;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            animation: fadeIn 1.5s ease-in-out;
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+
+        /* Fade-in effect */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Hover effect */
+        .container:hover {
+            transform: scale(1.03);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 36px;
+            letter-spacing: 1px;
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+            padding: 10px;
+            border-radius: 10px;
+            transition: background 0.3s ease, transform 0.3s ease;
+        }
+
+        /* Paragraph hover effect */
+        p:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateX(10px);
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>About Nutriguide</h1>
+
+    <p>
+        Nutriguide is a web-based nutrition and health management platform
+        developed using Flask, MySQL, HTML and CSS.
+    </p>
+
+    <p>
+        The system helps users calculate BMI, BMR, calorie requirements,
+        water intake, maintain health profiles and obtain healthy recipe recommendations.
+    </p>
+
+</div>
+
+</body>
+</html>

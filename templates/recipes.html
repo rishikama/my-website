@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Recipe Recommendations</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        /* NutriGuide professional background */
+        body {
+            background: url("https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&w=1600&q=80");
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            min-height: 100vh;
+        }
+
+        /* Dark overlay for readability */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 60, 0, 0.45);
+            z-index: -1;
+        }
+
+        /* Sticky Navbar */
+        .navbar {
+            position: sticky;
+            top: 0;
+            background: #1b5e20;
+            color: white;
+            padding: 15px 25px;
+            font-size: 22px;
+            font-weight: 800;
+            letter-spacing: 1px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            z-index: 1000;
+        }
+
+        /* Form */
+        form {
+            text-align: center;
+            margin: 20px;
+        }
+
+        select, button {
+            padding: 12px;
+            border-radius: 10px;
+            border: none;
+            margin: 10px;
+        }
+
+        button {
+            background: linear-gradient(90deg, #43a047, #66bb6a);
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            transform: scale(1.05);
+            background: linear-gradient(90deg, #2e7d32, #43a047);
+        }
+
+        /* Recipe Card */
+        .recipe-card {
+            background: rgba(255, 255, 255, 0.95);
+            width: 80%;
+            max-width: 700px;
+            margin: 20px auto;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.25);
+            transition: 0.3s ease;
+        }
+
+        .recipe-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.35);
+        }
+
+        h2 {
+            color: #1b5e20;
+            margin-bottom: 8px;
+        }
+
+        p {
+            margin: 5px 0;
+            color: #2e7d32;
+            line-height: 1.4;
+        }
+
+        strong {
+            color: #1b5e20;
+        }
+
+        hr {
+            border: none;
+            height: 1px;
+            background: #c8e6c9;
+            margin: 10px 0;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- Sticky Navbar -->
+    <div class="navbar">
+        NutriGuide Recipe Recommendations
+    </div>
+
+    <!-- Form -->
+    <form method="POST">
+
+        <select name="goal" required>
+            <option value="">Select Goal</option>
+            <option value="loss">Weight Loss</option>
+            <option value="maintain">Maintain Weight</option>
+            <option value="gain">Weight Gain</option>
+        </select>
+
+        <button type="submit">
+            Show Recipes
+        </button>
+
+    </form>
+
+    <hr>
+
+    <!-- Recipes -->
+    {% if recipes %}
+
+        {% for recipe in recipes %}
+
+        <div class="recipe-card">
+
+            <h2>{{ recipe[1] }}</h2>
+
+            <p><strong>Calories:</strong> {{ recipe[3] }}</p>
+            <p><strong>Protein:</strong> {{ recipe[4] }} g</p>
+            <p><strong>Carbs:</strong> {{ recipe[5] }} g</p>
+            <p><strong>Fat:</strong> {{ recipe[6] }} g</p>
+
+            <p><strong>Ingredients:</strong></p>
+            <p>{{ recipe[7] }}</p>
+
+            <p><strong>Instructions:</strong></p>
+            <p>{{ recipe[8] }}</p>
+
+        </div>
+
+        {% endfor %}
+
+    {% endif %}
+
+</body>
+</html>

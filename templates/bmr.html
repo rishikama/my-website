@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>BMR Calculator</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        /* Background image */
+        body {
+            background: url("https://images.unsplash.com/photo-1546484959-f8a7f2a1f5a1?auto=format&fit=crop&w=1600&q=80");
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            min-height: 100vh;
+        }
+
+        /* Dark overlay for readability */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 60, 0, 0.35);
+            z-index: -1;
+        }
+
+        /* Sticky navbar */
+        .navbar {
+            position: sticky;
+            top: 0;
+            background: rgba(0, 100, 0, 0.92);
+            color: white;
+            padding: 15px 30px;
+            font-size: 22px;
+            font-weight: 800;
+            letter-spacing: 1px;
+            z-index: 1000;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+
+        /* Hero image */
+        .hero {
+            width: 100%;
+            height: 250px;
+            overflow: hidden;
+        }
+
+        .hero img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.85);
+        }
+
+        /* Center layout */
+        .container {
+            display: flex;
+            justify-content: center;
+            padding: 40px;
+        }
+
+        /* Card UI */
+        .card {
+            background: rgba(255,255,255,0.96);
+            width: 400px;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+            transition: 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.35);
+        }
+
+        h1 {
+            text-align: center;
+            color: #1b5e20;
+            font-weight: 900;
+            margin-bottom: 20px;
+        }
+
+        /* Inputs */
+        input, select {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 2px solid #c8e6c9;
+            border-radius: 10px;
+            outline: none;
+            transition: 0.3s;
+        }
+
+        input:focus, select:focus {
+            border-color: #2e7d32;
+            box-shadow: 0 0 8px rgba(46,125,50,0.3);
+        }
+
+        /* Button */
+        button {
+            width: 100%;
+            padding: 12px;
+            background: linear-gradient(90deg, #43a047, #66bb6a);
+            color: white;
+            font-size: 16px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            transform: scale(1.05);
+            background: linear-gradient(90deg, #2e7d32, #43a047);
+        }
+
+        /* Result box */
+        .result {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 12px;
+            background: #e8f5e9;
+            border-left: 6px solid #2e7d32;
+            animation: fadeIn 0.8s ease;
+        }
+
+        .result h2 {
+            color: #1b5e20;
+        }
+
+        .result p {
+            color: #2e7d32;
+            margin-top: 5px;
+        }
+
+        @keyframes fadeIn {
+            from {opacity: 0; transform: translateY(10px);}
+            to {opacity: 1; transform: translateY(0);}
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <div class="navbar">
+        NutriGuide BMR Calculator
+    </div>
+
+    <!-- Hero Image -->
+    <div class="hero">
+        <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=1600&q=80"
+             alt="BMR Health Fitness">
+    </div>
+
+    <!-- Form -->
+    <div class="container">
+        <div class="card">
+
+            <h1>BMR Calculator</h1>
+
+            <form method="POST">
+
+                <input type="number" name="age" placeholder="Age" required>
+                <input type="number" step="0.01" name="weight" placeholder="Weight (kg)" required>
+                <input type="number" step="0.01" name="height" placeholder="Height (cm)" required>
+
+                <select name="gender" required>
+                    <option value="">Select Gender</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select>
+
+                <button type="submit">Calculate BMR</button>
+
+            </form>
+
+            {% if bmr %}
+            <div class="result">
+                <h2>Your BMR: {{ bmr }} kcal/day</h2>
+                <p>This is the energy your body needs at complete rest to maintain basic functions.</p>
+            </div>
+            {% endif %}
+
+        </div>
+    </div>
+
+</body>
+</html>

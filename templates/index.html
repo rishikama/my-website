@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Nutriguide</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        /* Background */
+        body {
+            background: url("https://images.unsplash.com/photo-1490818387583-1baba5e638af?auto=format&fit=crop&w=1600&q=80");
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            min-height: 100vh;
+        }
+
+        /* Overlay */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 80, 0, 0.35);
+            z-index: -1;
+        }
+
+        /* Navbar */
+        nav {
+            position: sticky;
+            top: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 30px;
+            background: rgba(0, 100, 0, 0.92);
+            color: white;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            z-index: 1000;
+        }
+
+        nav h1 {
+            font-size: 26px;
+            font-weight: 900;
+            letter-spacing: 2px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 15px;
+            font-weight: 600;
+            padding: 8px 12px;
+            border-radius: 8px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            background: #66bb6a;
+            transform: scale(1.05);
+        }
+
+        /* Hero Section */
+        .hero {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 80vh;
+            text-align: center;
+            color: white;
+            padding: 20px;
+        }
+
+        .hero h2 {
+            font-size: 42px;
+            font-weight: 900;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.6);
+        }
+
+        .hero p {
+            font-size: 18px;
+            max-width: 600px;
+            margin-bottom: 25px;
+            line-height: 1.5;
+            background: rgba(0,0,0,0.3);
+            padding: 10px 15px;
+            border-radius: 10px;
+        }
+
+        /* Button */
+        .hero button {
+            padding: 12px 25px;
+            font-size: 16px;
+            font-weight: bold;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            background: linear-gradient(90deg, #43a047, #66bb6a);
+            transition: 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+
+        .hero button:hover {
+            transform: scale(1.08);
+            background: linear-gradient(90deg, #2e7d32, #43a047);
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav>
+        <h1>NUTRIGUIDE</h1>
+
+        <div>
+            <a href="/">Home</a>
+            <a href="/register">Register</a>
+            <a href="/login">Login</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+
+        <h2>Personalized Diet Planner</h2>
+
+        <p>
+            Track BMI, BMR, Calories, Water Intake and receive
+            personalized diet recommendations for a healthier lifestyle.
+        </p>
+
+        <button>Start Your Health Journey</button>
+
+    </section>
+
+</body>
+</html>

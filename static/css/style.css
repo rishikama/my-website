@@ -1,0 +1,156 @@
+/* Background */
+body{
+    font-family: Arial, sans-serif;
+    background: linear-gradient(rgba(255,255,255,0.85),
+                                rgba(255,255,255,0.85)),
+                url("https://images.unsplash.com/photo-1490645935967-10de6ba17061");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    margin: 0;
+    padding: 0;
+}
+
+/* Sticky Navbar */
+nav{
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: linear-gradient(90deg,#2e7d32,#66bb6a);
+    padding: 15px 30px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+}
+
+/* Navbar Links */
+nav a{
+    color: white;
+    text-decoration: none;
+    margin-right: 25px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+nav a:hover{
+    color: #dcedc8;
+    transform: translateY(-3px);
+}
+
+/* Main Heading */
+h1{
+    color: #1b5e20;
+    text-align: center;
+    margin-top: 30px;
+    font-size: 42px;
+    animation: fadeInDown 1s ease;
+}
+
+/* Section Heading */
+h2{
+    color: #2e7d32;
+    margin-bottom: 15px;
+}
+
+/* Form Card */
+form{
+    background: rgba(255,255,255,0.95);
+    padding: 30px;
+    width: 450px;
+    margin: 40px auto;
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+    backdrop-filter: blur(5px);
+    animation: slideUp 1s ease;
+    transition: transform 0.3s ease;
+}
+
+form:hover{
+    transform: translateY(-8px);
+}
+
+/* Inputs */
+input,
+select{
+    width: 100%;
+    padding: 12px;
+    margin-top: 6px;
+    margin-bottom: 15px;
+    border: 2px solid #c8e6c9;
+    border-radius: 10px;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+}
+
+input:focus,
+select:focus{
+    outline: none;
+    border-color: #43a047;
+    box-shadow: 0 0 10px rgba(67,160,71,0.4);
+}
+
+/* Buttons */
+button{
+    width: 100%;
+    background: linear-gradient(90deg,#2e7d32,#66bb6a);
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button:hover{
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(46,125,50,0.4);
+}
+
+/* Normal Links */
+a{
+    text-decoration: none;
+    color: #1565c0;
+    transition: all 0.3s ease;
+}
+
+a:hover{
+    color: #0d47a1;
+}
+
+/* Card Section */
+.card{
+    background: rgba(255,255,255,0.9);
+    width: 80%;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+    transition: all 0.3s ease;
+}
+
+.card:hover{
+    transform: translateY(-5px);
+}
+
+/* Animations */
+@keyframes fadeInDown{
+    from{
+        opacity:0;
+        transform:translateY(-30px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@keyframes slideUp{
+    from{
+        opacity:0;
+        transform:translateY(40px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
